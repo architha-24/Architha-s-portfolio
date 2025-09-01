@@ -1,4 +1,3 @@
-// NAV toggle for small screens
 const navToggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.nav');
 
@@ -10,7 +9,6 @@ if (navToggle) {
   });
 }
 
-// Smooth scrolling for internal links
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', function (e) {
     const href = this.getAttribute('href');
@@ -18,13 +16,11 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       e.preventDefault();
       const target = document.querySelector(href);
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // close mobile nav after click
       if (window.innerWidth < 700 && nav) nav.style.display = 'none';
     }
   });
 });
 
-// Contact form submission with FormSubmit.co
 const form = document.querySelector('.contact-form');
 if (form) {
   form.addEventListener('submit', async (e) => {
